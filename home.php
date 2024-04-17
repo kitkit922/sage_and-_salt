@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sage & Salt &reg;</title>
   <!-- Bootstrap CSS -->
-  <link rel = "shortcut icon" type= "image/x-icon" href="Images/Logo.jpg">
+  <link rel="shortcut icon" type="image/x-icon" href="Images/Logo.jpg">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="Styles/style.css">
 </head>
 
@@ -18,39 +17,9 @@
   Your browser does not support HTML5 video.
 </video>
 <!-- Navbar -->
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Sage & Salt &reg;</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="menu.html">Order Online</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Reservation.html">Reservation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Contact Form.html">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Login.html">login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+<?php
+include 'components\header.php';
+?>
 
 <!-- Header -->
 <header class="jumbotron jumbotron-fluid">
