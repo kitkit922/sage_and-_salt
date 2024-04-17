@@ -1,0 +1,59 @@
+
+
+.comments-container {
+    max-width: 600px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.comment-item {
+    border: 1px solid #dee2e6; 
+    margin-bottom: 10px; 
+    padding: 15px; 
+    border-radius: 5px; 
+    background-color: #f8f9fa; 
+}
+
+.comment-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Star rating style */
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-size: 2em;
+    text-align: left;
+}
+
+.rating>span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+}
+
+.rating>span:hover,
+.rating>span:hover~span {
+    color: transparent;
+}
+
+.rating>span:hover:before,
+.rating>span:hover~span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: gold;
+}
+
+.btn-custom {
+    background-color: grey;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.5em;
+}
+
+textarea {
+    resize: vertical;
+}
