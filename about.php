@@ -17,7 +17,7 @@
 
 <body>
     <?php
-    include 'components\header.php';
+    include 'components/header.php';
     ?>
     <main>
         <img src="Images/o.png" width="50" height="75">
@@ -42,7 +42,7 @@
             <p>Don't have an account? <a href="signUp.html">Sign up</a></p>
           </form> -->
     <?php
-    include 'components\footer.php';
+    include 'components/footer.php';
     ?>
 
     <script src="scripts/myscripts.js"></script>

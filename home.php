@@ -18,7 +18,7 @@
 </video>
 <!-- Navbar -->
 <?php
-include 'components\header.php';
+include 'components/header.php';
 ?>
 
 <!-- Header -->
