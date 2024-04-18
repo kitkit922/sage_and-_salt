@@ -22,7 +22,7 @@
 
 <body>
     <?php
-    include 'components\header.php';
+    include 'components/header.php';
     ?>
     <main>
         <section class="jumbotron text-center">
@@ -69,7 +69,7 @@
 
     <!-- Footer -->
     <?php
-    include 'components\footer.php';
+    include 'components/footer.php';
     ?>
     <script src="scripts/mens.js"></script>
     <script src="scripts/myscripts.js"></script>

@@ -18,7 +18,7 @@
 </head>
 
 <?php
-include 'components\header.php';
+include 'components/header.php';
 ?>
 
 <br>
@@ -66,7 +66,7 @@ include 'components\header.php';
 
     <br>
     <?php
-    include 'components\footer.php';
+    include 'components/footer.php';
     ?>
 
 
