@@ -28,7 +28,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "sas_comments";
+  $dbname = "sas";
 
   try {
     // Create connection
