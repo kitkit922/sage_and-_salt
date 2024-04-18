@@ -30,14 +30,17 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" name="password" required placeholder="Create a password">
                             </div>
-                            <div class="d-grid gap-2">
+                            <div class="d-grid gap-2 mb-3">
                                 <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="login_page.php" class="btn btn-secondary">Login</a>
                             </div>
                             <?php
                             if (isset($_GET['status']) && $_GET['status'] == 'fail') {
                                 echo '<p style="color: red; text-align: center;">Username already exists. Registration not successful.</p>';
                             }
-                            if (isset($_GET['registration']) && $_GET['registration'] == 'success') {
+                            if (isset($_GET['status']) && $_GET['status'] == 'success') {
                                 echo '<p style="color: green; text-align: center;">Registration successful. You can now log in.</p>';
                             }
                             ?>

@@ -20,6 +20,21 @@
 <?php
 include 'components/header.php';
 ?>
+<?php
+session_start(); // Start or resume a session
+
+// Check login status message and display it
+if (isset($_SESSION['login_status'])) {
+    if ($_SESSION['login_status'] == 'success') {
+        echo '<p style="color: green; text-align: center;">Login successful.</p>';
+    } else if ($_SESSION['login_status'] == 'failure') {
+        echo '<p style="color: red; text-align: center;">Login unsuccessful. Please try again.</p>';
+    }
+
+    // Clear the login status message so it doesn't keep showing
+    unset($_SESSION['login_status']);
+}
+?>
 
 <!-- Header -->
 <header class="jumbotron jumbotron-fluid">

@@ -15,10 +15,10 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h1 class="card-title text-center mb-4">Login to Your Account</h1>
-                        <form method="post" action="login.php">
+                        <form method="post" action="submit_login_account.php">
                             <div class="mb-3">
                                 <label for="username" class="form-label">User Name</label>
-                                <input type="text" class="form-control" name="username" required placeholder="abc@gmail.com">
+                                <input type="text" class="form-control" name="username" required placeholder="user name">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
