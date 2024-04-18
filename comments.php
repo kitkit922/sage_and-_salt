@@ -23,35 +23,49 @@
 </head>
 
 <body>
-  <?php
-  include 'components\header.php';
+<?php
+  include 'components/header.php'; // Make sure the path uses forward slashes
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "sas_comments";
+
+  try {
+    // Create connection
+    $conn = new PDO("mysql:host=$servername", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Create database if it does not exist
+    $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+    $conn->exec($sql);
+    $conn->query("use $dbname"); // Switch to the database
+
+    // Create table if it does not exist
+    $sql = "CREATE TABLE IF NOT EXISTS comments (
+        id INT NOT NULL AUTO_INCREMENT,
+        name VARCHAR(50) NOT NULL,
+        comment VARCHAR(500) NOT NULL,
+        stars INT NOT NULL,
+        PRIMARY KEY(id)
+    )";
+    $conn->exec($sql);
+
+    // Prepare a SELECT statement to fetch the last 5 comments
+    $stmt = $conn->prepare("SELECT name, comment, stars FROM comments ORDER BY id DESC LIMIT 5");
+    $stmt->execute();
+
+    // Fetch the results
+    $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+  }
   ?>
   <main>
     <section class="jumbotron text-center">
       <h1 class="display-5">Comments </h1>
       <p class="lead">Welcome to tell us your thoughts! </p>
     </section>
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = ""; // Assume empty password for local development
-    $dbname = "sas_comments";
-
-    // Create a new PDO connection
-    try {
-      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      // Prepare a SELECT statement to fetch the last 5 comments
-      $stmt = $conn->prepare("SELECT name, comment, stars FROM comments ORDER BY id DESC LIMIT 5");
-      $stmt->execute();
-
-      // Fetch the results
-      $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-      echo "Connection failed: " . $e->getMessage();
-    }
-    ?>
     <div class="container">
       <!-- Display recent comments -->
       <div class="recent-comments">
