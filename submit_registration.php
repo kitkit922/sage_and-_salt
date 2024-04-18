@@ -5,14 +5,6 @@ $password = ""; // Use the appropriate password
 $dbname = "sas"; // Use your database name
 
 try {
-    // Create connection
-    $conn = new PDO("mysql:host=$servername", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Create database if it does not exist
-    $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
-    $conn->exec($sql);
-
     // Create connection to the MySQL server
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -33,6 +25,16 @@ try {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        // Check if the username already exists
+        $checkSql = "SELECT * FROM users WHERE username = ?";
+        $stmt = $conn->prepare($checkSql);
+        $stmt->execute([$username]);
+        if ($stmt->rowCount() > 0) {
+            // Username already exists
+            header("Location: register.php?status=fail");
+            exit;
+        }
+
         // Hash the password before storing it
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -40,7 +42,7 @@ try {
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email, $username, $hashed_password]);
 
-        // Redirect back to the login page with a success message or to a success page
+        // Redirect back to the login page with a success message
         header("Location: login.php?registration=success");
         exit;
     }
@@ -50,3 +52,4 @@ try {
 
 $conn = null;
 ?>
+
