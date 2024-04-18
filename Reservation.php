@@ -61,6 +61,11 @@
                                 <input type="number" class="form-control" id="guests" name="guests" min="1"> <!-- Added name attribute -->
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Submit Reservation</button>
+                            <?php if (isset($_GET['success']) && $_GET['success'] == 1) : ?>
+                                <div class="alert alert-success" role="alert">
+                                    Reservation submitted successfully!
+                                </div>
+                            <?php endif; ?>
                         </form>
                     </div>
                 </div>
