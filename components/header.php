@@ -26,7 +26,7 @@
                             <a class="nav-link" href="home.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="menu.php">Order online</a>
+                            <a class="nav-link" href="menu.php">Order Online</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Reservation.php">Reservation</a>
@@ -35,7 +35,7 @@
                             <a class="nav-link" href="about.php">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contact Form.php">Contact Us</a>
+                            <a class="nav-link" href="Contact_Form.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="comments.php">Comments</a>

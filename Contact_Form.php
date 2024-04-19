@@ -32,7 +32,7 @@ include 'components/header.php';
     <br>
 
     <div class="container2">
-        <form action="Contact Form.html" id="loginForm" method="post">
+        <form method="POST" action="submit_contact_form.php" id="loginForm" >
 
             <label for="fname">First Name</label>
             <br>
@@ -55,10 +55,14 @@ include 'components/header.php';
             <br><br>
             <label for="subject">Subject</label>
             <br>
-            <textarea id="subject" class="form-control" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <textarea id="subject" class="form-control" name="comment_box" placeholder="Write something.." style="height:200px"></textarea>
             <br>
             <input type="submit" value="Submit">
-
+            <?php if (isset($_GET['success']) && $_GET['success'] == 1) : ?>
+                <div class="alert alert-success" role="alert">
+                    Thank you for contacting us!
+                </div>
+            <?php endif; ?>
         </form>
     </div>
     <div id="message"></div>
