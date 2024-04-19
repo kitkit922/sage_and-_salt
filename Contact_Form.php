@@ -32,7 +32,7 @@ include 'components/header.php';
     <br>
 
     <div class="container2">
-        <form method="POST" action="submit_contact_form.php" id="loginForm" >
+        <form method="POST" action="submit_contact_form.php" id="loginForm">
 
             <label for="fname">First Name</label>
             <br>
@@ -55,7 +55,7 @@ include 'components/header.php';
             <br><br>
             <label for="subject">Subject</label>
             <br>
-            <textarea id="subject" class="form-control" name="comment_box" placeholder="Write something.." style="height:200px"></textarea>
+            <textarea id="subject" class="form-control" name="subject" placeholder="Write something.." style="height:200px"></textarea>
             <br>
             <input type="submit" value="Submit">
             <?php if (isset($_GET['success']) && $_GET['success'] == 1) : ?>
@@ -76,7 +76,7 @@ include 'components/header.php';
 
 
     <script src="scripts/myscripts.js"></script>
-    <script src="scripts/Contact.js"></script>
+    <!-- <script src="scripts/Contact.js"></script> -->
 
 
 </body>

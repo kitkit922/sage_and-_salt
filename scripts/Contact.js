@@ -46,18 +46,18 @@ form.addEventListener("submit", function(event) {
     return;
   }
 
-  // If all form fields are valid, submit the form using AJAX
-  var xhr = new XMLHttpRequest();
-  xhr.open(form.method, form.action);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-// Get the message element
-    const messageElement = document.getElementById("message");
+//   // If all form fields are valid, submit the form using AJAX
+//   var xhr = new XMLHttpRequest();
+//   xhr.open(form.method, form.action);
+//   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//   xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+// // Get the message element
+//     const messageElement = document.getElementById("message");
 
-// Display a success message to the user
-    messageElement.textContent = "Form submitted successfully!";
-    }
-  };
-  xhr.send(new FormData(form));
+// // Display a success message to the user
+//     messageElement.textContent = "Form submitted successfully!";
+//     }
+//   };
+//   xhr.send(new FormData(form));
 });

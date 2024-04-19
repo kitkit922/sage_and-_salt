@@ -1,4 +1,5 @@
 <?php
+// Database connection and table creation
 $servername = "localhost";
 $username = "root";
 $password = ""; // Use the appropriate password
@@ -24,30 +25,31 @@ try {
         lastname VARCHAR(50) NOT NULL,
         email VARCHAR(100) NOT NULL,
         country VARCHAR(50),
-        comment_box TEXT,
+        subject TEXT,
         PRIMARY KEY(id)
     )";
     $conn->exec($sql);
     echo "Table ensured.<br>"; // Debug: confirm table creation
-
-    // Insert new contact entry
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
-        $country = $_POST['country'];
-        $comment_box = $_POST['comment_box'];
-
-        $sql = "INSERT INTO contacts (firstname, lastname, email, country, comment_box) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$firstname, $lastname, $email, $country, $comment_box]);
-        header("Location: Contact_Form.php?success=1");
-        exit;
-    }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 
-$conn = null;
+// Insert new contact entry
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $country = $_POST['country'];
+    $subject = $_POST['subject'];
 
+    $sql = "INSERT INTO contacts (firstname, lastname, email, country, subject) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$firstname, $lastname, $email, $country, $subject]);
+
+    // Redirect after successful insertion
+    header("Location: Contact_Form.php?success=1");
+    exit;
+}
+
+$conn = null;
 ?>
